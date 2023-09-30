@@ -21,8 +21,27 @@ export default function Home() {
         <img
           src='/header.png'
           alt='SmartConSwap'
-          style={{ width: 'auto', height: '100px', marginBottom: '100px' }}
+          style={{ width: 'auto', height: '100px', marginBottom: '10px' }}
         />
+        <button
+          onClick={() => {
+            // Your swap logic here
+          }}
+          style={{
+            backgroundColor: 'white',
+            color: 'black',
+            padding: '10px 20px',
+            borderRadius: '8px',
+            border: '1px solid gray',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            fontFamily: 'sans-serif',
+            marginBottom: '80px',
+            
+          }}
+        >
+          text here
+        </button>
       </div>
 
       <ComboBox></ComboBox>
