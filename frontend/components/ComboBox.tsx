@@ -5,6 +5,18 @@ function Dropdown({ options, defaultDisplay }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredOptions, setFilteredOptions] = useState(options);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(options[0]);
+
+  const getCircleColor = (value) => {
+    switch (value) {
+      case 'sepolia':
+        return 'blue';
+      case 'mumbai':
+        return 'orange';
+      default:
+        return 'white';
+    }
+  };
 
   useEffect(() => {
     setFilteredOptions(
@@ -13,8 +25,6 @@ function Dropdown({ options, defaultDisplay }) {
       )
     );
   }, [searchTerm]);
-
-  
 
   return (
     <>
@@ -26,7 +36,7 @@ function Dropdown({ options, defaultDisplay }) {
           borderRadius: '1rem',
           position: 'relative',
           width: '256px',
-           marginTop: '20px',
+          marginTop: '20px',
         }}
       >
         <div
@@ -47,6 +57,26 @@ function Dropdown({ options, defaultDisplay }) {
           }}
           onClick={() => setShowDropdown(!showDropdown)}
         >
+          <div // This is your circle
+            style={{
+              width: '24px',
+              height: '24px',
+              backgroundColor: 'white',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginRight: '8px',
+            }}
+          >
+            {selectedOption.logo ? (
+              <img
+                src={selectedOption.logo}
+                alt='logo'
+                style={{ width: '16px', height: '16px' }}
+              />
+            ) : null}
+          </div>
           <span>{displayValue}</span>
           <span>▼</span>
         </div>
@@ -66,15 +96,19 @@ function Dropdown({ options, defaultDisplay }) {
               fontFamily: 'sans-serif',
             }}
           >
-            
             {filteredOptions.map((option) => (
               <div
                 key={option.value}
-                style={{ padding: '8px', cursor: 'pointer' }}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center', // to align items vertically center
+                  padding: '8px',
+                  cursor: 'pointer',
+                }}
                 onClick={() => {
                   setDisplayValue(option.label);
+                  setSelectedOption(option);
                   setShowDropdown(false);
-                  setSearchTerm('');
                 }}
                 onMouseOver={(e) =>
                   (e.currentTarget.style.backgroundColor = 'transparent')
@@ -83,6 +117,28 @@ function Dropdown({ options, defaultDisplay }) {
                   (e.currentTarget.style.backgroundColor = 'transparent')
                 }
               >
+                <div // This is the circle
+                  style={{
+                    width: '24px',
+                    height: '24px',
+                    backgroundColor: getCircleColor(selectedOption.value),
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginRight: '8px',
+                  }}
+                >
+                  {option.logo &&
+                  option.value !== 'sepolia' &&
+                  option.value !== 'mumbai' ? (
+                    <img
+                      src={option.logo}
+                      alt='logo'
+                      style={{ width: '16px', height: '16px' }}
+                    />
+                  ) : null}
+                </div>
                 {option.label}
               </div>
             ))}
@@ -100,27 +156,26 @@ export default function Home() {
   ];
 
   const optionsTwo = [
-    { value: 'ethereum', label: 'ETH' },
-    { value: 'link', label: 'LINK' },
-    { value: 'usdc', label: 'USDC' },
+    { value: 'ethereum', label: 'ETH', logo: '/ethereum-eth-logo.png' },
+    { value: 'link', label: 'LINK', logo: '/chainlink-link-logo.png' },
+    { value: 'usdc', label: 'USDC', logo: '/usd-coin-usdc-logo.png' },
   ];
 
   const optionsThree = [
-    { value: 'ethereum', label: 'ETH' },
-    { value: 'link', label: 'LINK' },
-    { value: 'usdc', label: 'USDC' },
+    { value: 'ethereum', label: 'ETH', logo: '/ethereum-eth-logo.png' },
+    { value: 'link', label: 'LINK', logo: '/chainlink-link-logo.png' },
+    { value: 'usdc', label: 'USDC', logo: '/usd-coin-usdc-logo.png' },
   ];
 
   const [numberInputOne, setNumberInputOne] = useState('0');
-  
-  const [numberInputTwo, setNumberInputTwo] = useState('0');
 
+  const [numberInputTwo, setNumberInputTwo] = useState('0');
 
   const [isFlipping, setIsFlipping] = useState(false);
 
   const handleClick = () => {
     setIsFlipping(true);
-    // Your swap logic here
+    // **** swap logic here ****
 
     setTimeout(() => setIsFlipping(false), 1000);
   };
