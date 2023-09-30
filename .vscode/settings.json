@@ -1,5 +1,5 @@
 {
     "solidity.compileUsingRemoteVersion": "v0.8.21+commit.d9974bed",
     "solidity.defaultCompiler": "localFile",
-    "solidity.compileUsingLocalVersion": "/home/john/Smartcon/soljson-v0.8.21+commit.d9974bed.js"
+    "solidity.compileUsingLocalVersion": "/home/john/Smartcon/soljson-v0.8.19+commit.7dd6d404.js"
 }
