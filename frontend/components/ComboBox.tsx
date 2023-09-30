@@ -185,6 +185,7 @@ export default function Home() {
               textAlign: 'center',
               marginLeft: '25px',
               fontFamily: 'sans-serif',
+              outline: 'none',
             }}
             defaultValue={0}
           />
@@ -217,6 +218,7 @@ export default function Home() {
               textAlign: 'center',
               marginLeft: '25px',
               fontFamily: 'sans-serif',
+              outline: 'none',
             }}
             defaultValue={0}
           />
@@ -285,6 +287,7 @@ export default function Home() {
               textAlign: 'center',
               marginLeft: '25px',
               fontFamily: 'sans-serif',
+              outline: 'none',
             }}
             defaultValue={0}
           />
@@ -317,6 +320,7 @@ export default function Home() {
               textAlign: 'center',
               marginLeft: '25px',
               fontFamily: 'sans-serif',
+              outline: 'none',
             }}
             defaultValue={0}
           />
