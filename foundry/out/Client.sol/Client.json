@@ -15,19 +15,19 @@
     }
   ],
   "bytecode": {
-    "object": "0x6098610038600b82828239805160001a607314602b57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361060335760003560e01c80633ab8c0d0146038575b600080fd5b60456397a657c960e01b81565b6040516001600160e01b0319909116815260200160405180910390f3fea264697066735822122075b5228e9b66d41bd8acb37f1d7ef191b1e05913be862fd157e351cc63c5dbb164736f6c63430008150033",
+    "object": "0x6098610038600b82828239805160001a607314602b57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361060335760003560e01c80633ab8c0d0146038575b600080fd5b60456397a657c960e01b81565b6040516001600160e01b0319909116815260200160405180910390f3fea26469706673582212206e989c9c9dba6a30f93fec989c53dce1288f13dec6a3692c85bb6a895542ee7f64736f6c63430008150033",
     "sourceMap": "82:1288:3:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;82:1288:3;;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x730000000000000000000000000000000000000000301460806040526004361060335760003560e01c80633ab8c0d0146038575b600080fd5b60456397a657c960e01b81565b6040516001600160e01b0319909116815260200160405180910390f3fea264697066735822122075b5228e9b66d41bd8acb37f1d7ef191b1e05913be862fd157e351cc63c5dbb164736f6c63430008150033",
-    "sourceMap": "82:1288:3:-:0;;;;;;;;;;;;;;;;;;;;;;;;1084:57;;-1:-1:-1;;;1084:57:3;;;;;-1:-1:-1;;;;;;184:33:11;;;166:52;;154:2;139:18;1084:57:3;;;;;;",
+    "object": "0x730000000000000000000000000000000000000000301460806040526004361060335760003560e01c80633ab8c0d0146038575b600080fd5b60456397a657c960e01b81565b6040516001600160e01b0319909116815260200160405180910390f3fea26469706673582212206e989c9c9dba6a30f93fec989c53dce1288f13dec6a3692c85bb6a895542ee7f64736f6c63430008150033",
+    "sourceMap": "82:1288:3:-:0;;;;;;;;;;;;;;;;;;;;;;;;1084:57;;-1:-1:-1;;;1084:57:3;;;;;-1:-1:-1;;;;;;184:33:13;;;166:52;;154:2;139:18;1084:57:3;;;;;;",
     "linkReferences": {}
   },
   "methodIdentifiers": {
     "EVM_EXTRA_ARGS_V1_TAG()": "3ab8c0d0"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"EVM_EXTRA_ARGS_V1_TAG\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/ccip/contracts/src/v0.8/ccip/libraries/Client.sol\":\"Client\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@chainlink-ccip/=lib/ccip/contracts/src/v0.8/\",\":@chainlink/=lib/chainlink/contract/src/v0.8/\",\":@openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@uniswap-periphery/=lib/v3-periphery/contracts/\",\":@uniswap/v3-core/=lib/v3-core/\",\":ccip/=lib/ccip/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":v3-core/=lib/v3-core/\",\":v3-periphery/=lib/v3-periphery/contracts/\"]},\"sources\":{\"lib/ccip/contracts/src/v0.8/ccip/libraries/Client.sol\":{\"keccak256\":\"0x01d88151b2e0b675c7cd89f9dcdc1d9c92332be74938c1cedfe05e910a7cbddc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://939fabf11f282fdcf26342965c824b77f7bb190468f9206535a870371ffd87c5\",\"dweb:/ipfs/QmXHSWmPbVhMcYLokmvrqTxgQtVjoqzMES4RrbxyJk8s3a\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"EVM_EXTRA_ARGS_V1_TAG\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/ccip/contracts/src/v0.8/ccip/libraries/Client.sol\":\"Client\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@uniswap/v3-core/=lib/v3-core/\",\":ccip/=lib/ccip/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":v3-core/=lib/v3-core/\",\":v3-periphery/=lib/v3-periphery/contracts/\"]},\"sources\":{\"lib/ccip/contracts/src/v0.8/ccip/libraries/Client.sol\":{\"keccak256\":\"0x01d88151b2e0b675c7cd89f9dcdc1d9c92332be74938c1cedfe05e910a7cbddc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://939fabf11f282fdcf26342965c824b77f7bb190468f9206535a870371ffd87c5\",\"dweb:/ipfs/QmXHSWmPbVhMcYLokmvrqTxgQtVjoqzMES4RrbxyJk8s3a\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.21+commit.d9974bed"
@@ -62,11 +62,7 @@
     },
     "settings": {
       "remappings": [
-        "@chainlink-ccip/=lib/ccip/contracts/src/v0.8/",
-        "@chainlink/=lib/chainlink/contract/src/v0.8/",
-        "@openzeppelin/=lib/openzeppelin-contracts/contracts/",
         "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
-        "@uniswap-periphery/=lib/v3-periphery/contracts/",
         "@uniswap/v3-core/=lib/v3-core/",
         "ccip/=lib/ccip/",
         "ds-test/=lib/forge-std/lib/ds-test/src/",
