@@ -1,0 +1,271 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/ICrossSwap.sol\":\"ICrossSwap\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@chainlink-ccip/=lib/ccip/contracts/src/v0.8/\",\":@chainlink/=lib/chainlink/contract/src/v0.8/\",\":@openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@uniswap-periphery/=lib/v3-periphery/contracts/\",\":@uniswap/v3-core/=lib/v3-core/\",\":ccip/=lib/ccip/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":v3-core/=lib/v3-core/\",\":v3-periphery/=lib/v3-periphery/contracts/\"]},\"sources\":{\"src/interfaces/ICrossSwap.sol\":{\"keccak256\":\"0x4d248b4af407fd21172ebea08165f06b2c34bbb6ee2a13a1208b772ba8b729c4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://de01ae8dcce78413f16ec60786a937e90e046deed182bf4a80312b8ddfe0adf0\",\"dweb:/ipfs/Qme2NwNYSBcfYy2q9WydPP9kKQ2Znjp4aYCkq8kDxApvdL\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@chainlink-ccip/=lib/ccip/contracts/src/v0.8/",
+        "@chainlink/=lib/chainlink/contract/src/v0.8/",
+        "@openzeppelin/=lib/openzeppelin-contracts/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@uniswap-periphery/=lib/v3-periphery/contracts/",
+        "@uniswap/v3-core/=lib/v3-core/",
+        "ccip/=lib/ccip/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "v3-core/=lib/v3-core/",
+        "v3-periphery/=lib/v3-periphery/contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/interfaces/ICrossSwap.sol": "ICrossSwap"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/interfaces/ICrossSwap.sol": {
+        "keccak256": "0x4d248b4af407fd21172ebea08165f06b2c34bbb6ee2a13a1208b772ba8b729c4",
+        "urls": [
+          "bzz-raw://de01ae8dcce78413f16ec60786a937e90e046deed182bf4a80312b8ddfe0adf0",
+          "dweb:/ipfs/Qme2NwNYSBcfYy2q9WydPP9kKQ2Znjp4aYCkq8kDxApvdL"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/interfaces/ICrossSwap.sol",
+    "id": 864,
+    "exportedSymbols": {
+      "ICrossSwap": [
+        863
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:229:10",
+    "nodes": [
+      {
+        "id": 851,
+        "nodeType": "PragmaDirective",
+        "src": "32:24:10",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".21"
+        ]
+      },
+      {
+        "id": 863,
+        "nodeType": "ContractDefinition",
+        "src": "58:203:10",
+        "nodes": [
+          {
+            "id": 862,
+            "nodeType": "StructDefinition",
+            "src": "85:174:10",
+            "nodes": [],
+            "canonicalName": "ICrossSwap.SwapParams",
+            "members": [
+              {
+                "constant": false,
+                "id": 853,
+                "mutability": "mutable",
+                "name": "tokenOut",
+                "nameLocation": "121:8:10",
+                "nodeType": "VariableDeclaration",
+                "scope": 862,
+                "src": "113:16:10",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 852,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "113:7:10",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 855,
+                "mutability": "mutable",
+                "name": "amountOutMinimum",
+                "nameLocation": "147:16:10",
+                "nodeType": "VariableDeclaration",
+                "scope": 862,
+                "src": "139:24:10",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 854,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "139:7:10",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 857,
+                "mutability": "mutable",
+                "name": "fee",
+                "nameLocation": "180:3:10",
+                "nodeType": "VariableDeclaration",
+                "scope": 862,
+                "src": "173:10:10",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint24",
+                  "typeString": "uint24"
+                },
+                "typeName": {
+                  "id": 856,
+                  "name": "uint24",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "173:6:10",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint24",
+                    "typeString": "uint24"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 859,
+                "mutability": "mutable",
+                "name": "sqrtPriceLimitX96",
+                "nameLocation": "201:17:10",
+                "nodeType": "VariableDeclaration",
+                "scope": 862,
+                "src": "193:25:10",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint160",
+                  "typeString": "uint160"
+                },
+                "typeName": {
+                  "id": 858,
+                  "name": "uint160",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "193:7:10",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 861,
+                "mutability": "mutable",
+                "name": "receiver",
+                "nameLocation": "244:8:10",
+                "nodeType": "VariableDeclaration",
+                "scope": 862,
+                "src": "236:16:10",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 860,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "236:7:10",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "SwapParams",
+            "nameLocation": "92:10:10",
+            "scope": 863,
+            "visibility": "public"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ICrossSwap",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          863
+        ],
+        "name": "ICrossSwap",
+        "nameLocation": "68:10:10",
+        "scope": 864,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 10
+}
