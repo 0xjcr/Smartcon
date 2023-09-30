@@ -26,35 +26,52 @@ export default function Home() {
           flexDirection: "column",
         }}
       >
-        {/* <img
+        <img
           src="/header.png"
           alt="SmartConSwap"
-          style={{ width: "auto", height: "100px", marginBottom: "100px" }}
-        /> */}
-
-        <div>
-          <h1 className={styles.title}>
-            Wallet Status = {walletConnectionStatus}
-          </h1>
-          {!isWalletConnected && (
-            <button
-              onClick={() => connectToWallet()}
-              disabled={isWalletConnected || isWalletConnectedLoading}
-            >
-              Connect to wallet!
-            </button>
-          )}
-          {
-            <p>
-              Wallet is connected: {signer?.address} and using the {networkName}{" "}
-              provider
-            </p>
-          }
-          <button onClick={() => makeTheTransfer()}>
-            Test the connection!
-          </button>
-        </div>
+          style={{ width: "auto", height: "80px", margin: "50px" }}
+        />
+        <button
+          onClick={() => {
+            // Your swap logic here
+          }}
+          style={{
+            backgroundColor: "white",
+            color: "black",
+            padding: "10px 20px",
+            borderRadius: "8px",
+            border: "1px solid gray",
+            cursor: "pointer",
+            fontWeight: "bold",
+            fontFamily: "sans-serif",
+            marginBottom: "150px",
+          }}
+        >
+          text here
+        </button>
       </div>
+
+      <div>
+        <h1 className={styles.title}>
+          Wallet Status = {walletConnectionStatus}
+        </h1>
+        {!isWalletConnected && (
+          <button
+            onClick={() => connectToWallet()}
+            disabled={isWalletConnected || isWalletConnectedLoading}
+          >
+            Connect to wallet!
+          </button>
+        )}
+        {
+          <p>
+            Wallet is connected: {signer?.address} and using the {networkName}{" "}
+            provider
+          </p>
+        }
+        <button onClick={() => makeTheTransfer()}>Test the connection!</button>
+      </div>
+
       <ComboBox></ComboBox>
     </main>
   );

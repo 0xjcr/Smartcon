@@ -97,12 +97,12 @@ const useSmartContractHook = () => {
     const data = "0x"; // Replace with the data to send
     const tokenAmounts = [
       {
-        token: "0xA0Ab9EB68C3e5D080a073e7D49a61c2b840Dce80", // Replace with the token address
+        token: ethers.ZeroAddress, // "0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889", // Replace with the token address
         amount: 3000, // ethers.parseEther("1"), // Replace with the token amount
       },
     ];
-    const feeToken = "0xbFA2ACd33ED6EEc0ed3Cc06bF1ac38d22b36B9e9"; // Replace with the fee token address
-    const extraArgs = "0x"; // Replace with any extra arguments
+    const feeToken = "0x84b9B910527Ad5C03A9Ca831909E21e236EA7b06"; // Replace with the fee token address
+    const extraArgs = "0xA0Ab9EB68C3e5D080a073e7D49a61c2b840Dce80"; // Replace with any extra arguments
 
     const overrides = {
       value: 700, // ethers.parseEther("0.001"), // Replace with the amount of Ether to send
