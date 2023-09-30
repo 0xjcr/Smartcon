@@ -252,12 +252,12 @@ export default function Home() {
             <input
               type='text'
               inputMode='decimal'
-              value={numberInputOne}
+              value={numberInputTwo}
               onChange={(e) => {
                 const value = e.target.value;
                 // Regular expression to allow numbers and decimals
                 if (/^\d*\.?\d*$/.test(value) || value === '')
-                  setNumberInputOne(value);
+                  setNumberInputTwo(value);
               }}
               style={{
                 width: '40%',
