@@ -14,6 +14,8 @@ function Dropdown({ options, defaultDisplay }) {
     );
   }, [searchTerm]);
 
+  
+
   return (
     <>
       <div
@@ -112,6 +114,16 @@ export default function Home() {
   const [numberInputOne, setNumberInputOne] = useState('0');
   
   const [numberInputTwo, setNumberInputTwo] = useState('0');
+
+
+  const [isFlipping, setIsFlipping] = useState(false);
+
+  const handleClick = () => {
+    setIsFlipping(true);
+    // Your swap logic here
+
+    setTimeout(() => setIsFlipping(false), 1000);
+  };
 
   return (
     <>
@@ -294,9 +306,7 @@ export default function Home() {
         }}
       >
         <button
-          onClick={() => {
-            // Your swap logic here
-          }}
+          onClick={handleClick}
           style={{
             backgroundColor: 'white',
             color: 'black',
@@ -308,6 +318,10 @@ export default function Home() {
             fontFamily: 'sans-serif',
             boxShadow:
               'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
+            transform: isFlipping
+              ? 'rotateX(180deg) rotateY(180deg)'
+              : 'rotateX(0deg)',
+            transition: 'transform 1s',
           }}
         >
           Swap
