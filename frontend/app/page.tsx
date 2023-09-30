@@ -13,6 +13,7 @@ export default function Home() {
     isWalletConnectedLoading,
     signer,
     networkName,
+    makeTheTransfer,
   } = useSmartContractHook();
   return (
     <main className={styles.main}>
@@ -25,31 +26,35 @@ export default function Home() {
           flexDirection: "column",
         }}
       >
-        <img
+        {/* <img
           src="/header.png"
           alt="SmartConSwap"
           style={{ width: "auto", height: "100px", marginBottom: "100px" }}
-        />
+        /> */}
 
-        <h1 className={styles.title}>
-          Wallet Status = {walletConnectionStatus}
-        </h1>
-        {!isWalletConnected && (
-          <button
-            onClick={() => connectToWallet()}
-            disabled={isWalletConnected || isWalletConnectedLoading}
-          >
-            Connect to wallet!
+        <div>
+          <h1 className={styles.title}>
+            Wallet Status = {walletConnectionStatus}
+          </h1>
+          {!isWalletConnected && (
+            <button
+              onClick={() => connectToWallet()}
+              disabled={isWalletConnected || isWalletConnectedLoading}
+            >
+              Connect to wallet!
+            </button>
+          )}
+          {
+            <p>
+              Wallet is connected: {signer?.address} and using the {networkName}{" "}
+              provider
+            </p>
+          }
+          <button onClick={() => makeTheTransfer()}>
+            Test the connection!
           </button>
-        )}
-        {isWalletConnected && (
-          <p>
-            Wallet is connected: {signer.address} and using the {networkName}{" "}
-            provider
-          </p>
-        )}
+        </div>
       </div>
-
       <ComboBox></ComboBox>
     </main>
   );
