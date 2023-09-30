@@ -21,11 +21,10 @@ function Dropdown({ options, defaultDisplay }) {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          padding: '16px',
           borderRadius: '1rem',
           position: 'relative',
           width: '256px',
-          marginTop: '16px',
+           marginTop: '20px',
         }}
       >
         <div
@@ -65,12 +64,7 @@ function Dropdown({ options, defaultDisplay }) {
               fontFamily: 'sans-serif',
             }}
           >
-            {/* <input
-            type='text'
-            style={{ width: '100%', padding: '8px', borderRadius: '1rem' }}
-            placeholder='Search...'
-            onChange={(e) => setSearchTerm(e.target.value)}
-          /> */}
+            
             {filteredOptions.map((option) => (
               <div
                 key={option.value}
@@ -116,222 +110,186 @@ export default function Home() {
   ];
 
   const [numberInputOne, setNumberInputOne] = useState('0');
+  
   const [numberInputTwo, setNumberInputTwo] = useState('0');
-  const [numberInputThree, setNumberInputThree] = useState('0');
-  const [numberInputFour, setNumberInputFour] = useState('0');
 
   return (
     <>
-      <h1
-        style={{
-          marginLeft: '250px',
-          fontSize: '24px',
-          fontFamily: 'sans-serif',
-        }}
-      >
-        From
-      </h1>
       <div
         style={{
+          marginTop: '60px',
           display: 'flex',
-          flexDirection: 'row',
-          backgroundColor: 'white',
-          padding: '16px',
-          justifyContent: 'space-around',
-          alignItems: 'center',
-          marginLeft: '250px',
-          marginRight: '250px',
-          borderRadius: '1rem',
-          fontFamily: 'sans-serif',
-          boxShadow:
-            'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
+          flexDirection: 'column',
+          alignItems: 'center', // This will center all child elements horizontally.
         }}
       >
-        <div
+        {/* <h1
           style={{
-            borderRadius: '1rem',
-            backgroundColor: 'white',
-            //  border: '1px solid blue',
+            marginLeft: '250px',
+            fontSize: '24px',
+            fontFamily: 'sans-serif',
           }}
         >
-          <Dropdown options={optionsOne} defaultDisplay='Select Chain' />
-          <div style={{ height: '55px' }}></div>
-        </div>
+          From
+        </h1> */}
         <div
           style={{
-            borderRadius: '1rem',
+            width: '550px',
+            display: 'flex',
+            flexDirection: 'row',
             backgroundColor: 'white',
-            // border: '1px solid blue',
+            paddingLeft: '50px',
+            paddingRight: '50px',
+            padding: '20px',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+            marginLeft: '250px',
+            marginRight: '250px',
+            borderRadius: '1rem',
+            fontFamily: 'sans-serif',
+            boxShadow:
+              'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
           }}
         >
-          <Dropdown options={optionsTwo} defaultDisplay='Select Token' />
-          <input
-            type='text'
-            inputMode='decimal'
-            value={numberInputOne}
-            onChange={(e) => {
-              const value = e.target.value;
-              // Regular expression to allow numbers and decimals
-              if (/^\d*\.?\d*$/.test(value) || value === '')
-                setNumberInputOne(value);
-            }}
+          <div
             style={{
-              width: '40%',
-              padding: '8px',
-              color: 'black',
+              borderRadius: '1rem',
               backgroundColor: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold',
-              textAlign: 'center',
-              marginLeft: '25px',
-              fontFamily: 'sans-serif',
-              outline: 'none',
+              //  border: '1px solid blue',
             }}
-            defaultValue={0}
-          />
+          >
+            <Dropdown options={optionsOne} defaultDisplay='Select Chain' />
+            <div style={{ height: '55px' }}></div>
+          </div>
+          <div
+            style={{
+              borderRadius: '1rem',
+              backgroundColor: 'white',
+              // border: '1px solid blue',
+            }}
+          >
+            <Dropdown options={optionsTwo} defaultDisplay='Select Token' />
+            <input
+              type='text'
+              inputMode='decimal'
+              value={numberInputOne}
+              onChange={(e) => {
+                const value = e.target.value;
+                // Regular expression to allow numbers and decimals
+                if (/^\d*\.?\d*$/.test(value) || value === '')
+                  setNumberInputOne(value);
+              }}
+              style={{
+                width: '40%',
+                padding: '8px',
+                color: 'black',
+                backgroundColor: 'white',
+                fontSize: '24px',
+                fontWeight: 'bold',
+                textAlign: 'center',
+                marginLeft: '25px',
+                fontFamily: 'sans-serif',
+                outline: 'none',
+              }}
+              defaultValue={0}
+            />
+          </div>
+          <div
+            style={{
+              borderRadius: '1rem',
+              backgroundColor: 'white',
+              // border: '1px solid blue',
+            }}
+          ></div>
         </div>
-        <div
+        <div style={{ height: '50px' }}></div>
+        {/* <h1
           style={{
-            borderRadius: '1rem',
-            backgroundColor: 'white',
-            // border: '1px solid blue',
+            marginLeft: '250px',
+            fontSize: '24px',
+            fontFamily: 'sans-serif',
           }}
         >
-          <Dropdown options={optionsThree} defaultDisplay='Select Token' />
-          <input
-            type='text'
-            inputMode='decimal'
-            value={numberInputTwo}
-            onChange={(e) => {
-              const value = e.target.value;
-              // Regular expression to allow numbers and decimals
-              if (/^\d*\.?\d*$/.test(value) || value === '')
-                setNumberInputTwo(value);
-            }}
+          To
+        </h1> */}
+        <div
+          style={{
+            width: '550px',
+            display: 'flex',
+            flexDirection: 'row',
+            backgroundColor: 'white',
+            paddingLeft: '50px',
+            paddingRight: '50px',
+            padding: '20px',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+            marginLeft: '250px',
+            marginRight: '250px',
+            borderRadius: '1rem',
+            fontFamily: 'sans-serif',
+            boxShadow:
+              'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
+          }}
+        >
+          <div
             style={{
-              width: '40%',
-              padding: '8px',
-              color: 'black',
+              borderRadius: '1rem',
               backgroundColor: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold',
-              textAlign: 'center',
-              marginLeft: '25px',
-              fontFamily: 'sans-serif',
-              outline: 'none',
+              //  border: '1px solid blue',
             }}
-            defaultValue={0}
-          />
+          >
+            <Dropdown options={optionsOne} defaultDisplay='Select Chain' />
+            <div style={{ height: '55px' }}></div>
+          </div>
+          <div
+            style={{
+              borderRadius: '1rem',
+              backgroundColor: 'white',
+              // border: '1px solid blue',
+            }}
+          >
+            <Dropdown options={optionsTwo} defaultDisplay='Select Token' />
+            <input
+              type='text'
+              inputMode='decimal'
+              value={numberInputOne}
+              onChange={(e) => {
+                const value = e.target.value;
+                // Regular expression to allow numbers and decimals
+                if (/^\d*\.?\d*$/.test(value) || value === '')
+                  setNumberInputOne(value);
+              }}
+              style={{
+                width: '40%',
+                padding: '8px',
+                color: 'black',
+                backgroundColor: 'white',
+                fontSize: '24px',
+                fontWeight: 'bold',
+                textAlign: 'center',
+                marginLeft: '25px',
+                fontFamily: 'sans-serif',
+                outline: 'none',
+              }}
+              defaultValue={0}
+            />
+          </div>
+          <div
+            style={{
+              borderRadius: '1rem',
+              backgroundColor: 'white',
+              // border: '1px solid blue',
+            }}
+          ></div>
         </div>
       </div>
       <div style={{ height: '50px' }}></div>
-      <h1
-        style={{
-          marginLeft: '250px',
-          fontSize: '24px',
-          fontFamily: 'sans-serif',
-        }}
-      >
-        To
-      </h1>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          backgroundColor: 'white',
-          padding: '16px',
-          justifyContent: 'space-around',
-          alignItems: 'center',
-          marginLeft: '250px',
-          marginRight: '250px',
-          borderRadius: '1rem',
-          boxShadow:
-            'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
-        }}
-      >
-        <div
-          style={{
-            borderRadius: '1rem',
-            backgroundColor: 'white',
-            // border: '1px solid blue',
-          }}
-        >
-          <Dropdown options={optionsOne} defaultDisplay='Select Chain' />
-          <div style={{ height: '55px' }}></div>
-        </div>
-        <div
-          style={{
-            borderRadius: '1rem',
-            backgroundColor: 'white',
-            // border: '1px solid blue',
-          }}
-        >
-          <Dropdown options={optionsTwo} defaultDisplay='Select Token' />
-          <input
-            type='text'
-            inputMode='decimal'
-            value={numberInputThree}
-            onChange={(e) => {
-              const value = e.target.value;
-              // Regular expression to allow numbers and decimals
-              if (/^\d*\.?\d*$/.test(value) || value === '')
-                setNumberInputThree(value);
-            }}
-            style={{
-              width: '40%',
-              padding: '8px',
-              color: 'black',
-              backgroundColor: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold',
-              textAlign: 'center',
-              marginLeft: '25px',
-              fontFamily: 'sans-serif',
-              outline: 'none',
-            }}
-            defaultValue={0}
-          />
-        </div>
-        <div
-          style={{
-            borderRadius: '1rem',
-            backgroundColor: 'white',
-            // border: '1px solid blue',
-          }}
-        >
-          <Dropdown options={optionsThree} defaultDisplay='Select Token' />
-          <input
-            type='text'
-            inputMode='decimal'
-            value={numberInputFour}
-            onChange={(e) => {
-              const value = e.target.value;
-              // Regular expression to allow numbers and decimals
-              if (/^\d*\.?\d*$/.test(value) || value === '')
-                setNumberInputFour(value);
-            }}
-            style={{
-              width: '40%',
-              padding: '8px',
-              color: 'black',
-              backgroundColor: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold',
-              textAlign: 'center',
-              marginLeft: '25px',
-              fontFamily: 'sans-serif',
-              outline: 'none',
-            }}
-            defaultValue={0}
-          />
-        </div>
-      </div>
       <div
         style={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '100px', // This assumes the container takes the full height of the screen
+          height: '10px', // This assumes the container takes the full height of the screen
           flexDirection: 'column', // to ensure other elements in this div are also centered vertically
         }}
       >

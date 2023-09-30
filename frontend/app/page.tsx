@@ -21,7 +21,7 @@ export default function Home() {
         <img
           src='/header.png'
           alt='SmartConSwap'
-          style={{ width: 'auto', height: '100px', marginBottom: '10px' }}
+          style={{ width: 'auto', height: '100px', margin: '50px' }}
         />
         <button
           onClick={() => {
@@ -36,7 +36,7 @@ export default function Home() {
             cursor: 'pointer',
             fontWeight: 'bold',
             fontFamily: 'sans-serif',
-            marginBottom: '80px',
+            marginBottom: '180px',
             
           }}
         >
