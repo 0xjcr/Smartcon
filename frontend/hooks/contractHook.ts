@@ -98,21 +98,39 @@ const useSmartContractHook = () => {
     const tokenAmounts = [
       {
         token: ethers.ZeroAddress, // "0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889", // Replace with the token address
-        amount: 3000, // ethers.parseEther("1"), // Replace with the token amount
+        amount: ethers.parseEther("0.0030"), // Replace with the token amount
       },
     ];
     const feeToken = "0x84b9B910527Ad5C03A9Ca831909E21e236EA7b06"; // Replace with the fee token address
-    const extraArgs = "0xA0Ab9EB68C3e5D080a073e7D49a61c2b840Dce80"; // Replace with any extra arguments
+    const functionSelector = ethers.id("CCIP EVMExtraArgsV1").slice(0, 10);
+    const textraArgs = ethers.AbiCoder.defaultAbiCoder().encode(
+      ["uint256", "bool"],
+      [1000000, false]
+    ); // for transfers to EOA gas limit is 0
+    const encodedExtraArgs = `${functionSelector}${textraArgs.slice(2)}`;
+
+    const extraArgs = encodedExtraArgs; //"0xA0Ab9EB68C3e5D080a073e7D49a61c2b840Dce80"; // Replace with any extra arguments
 
     const overrides = {
-      value: 700, // ethers.parseEther("0.001"), // Replace with the amount of Ether to send
+      value: ethers.parseEther("0.01"), // Replace with the amount of Ether to send
       gasLimit: 1000000, // Replace with the gas limit,
       gasPrice: 1000000000, // Replace with the gas price
     };
 
+    const message = {
+      receiver: ethers.AbiCoder.defaultAbiCoder().encode(
+        ["address"],
+        [receiver]
+      ),
+      data: ethers.AbiCoder.defaultAbiCoder().encode(["string"], [""]), // no data
+      tokenAmounts: tokenAmounts,
+      feeToken: feeToken ? feeToken : ethers.ZeroAddress,
+      extraArgs: encodedExtraArgs,
+    };
     const tx = await contract.ccipSend(
       destinationChainSelector,
-      { receiver, data, tokenAmounts, feeToken, extraArgs },
+      message,
+      // { receiver, data, tokenAmounts, feeToken, extraArgs },
       overrides
     );
 
