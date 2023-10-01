@@ -92,16 +92,16 @@ const useSmartContractHook = () => {
     };
     // const ccipSendTrigger = await contract.ccipSend(`12532609583862916517`, params);
 
-    const destinationChainSelector = `12532609583862916517`; // Replace with the destination chain selector
+    const destinationChainSelector = `16015286601757825753`; // Replace with the destination chain selector
     const receiver = walletAddress; // Replace with the receiver address
     const data = "0x"; // Replace with the data to send
     const tokenAmounts = [
       {
-        token: ethers.ZeroAddress, // "0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889", // Replace with the token address
+        token: "0xbfa2acd33ed6eec0ed3cc06bf1ac38d22b36b9e9", // Replace with the token address
         amount: ethers.parseEther("0.0030"), // Replace with the token amount
       },
     ];
-    const feeToken = "0x84b9B910527Ad5C03A9Ca831909E21e236EA7b06"; // Replace with the fee token address
+    const feeToken = ethers.ZeroAddress; //"0xbfa2acd33ed6eec0ed3cc06bf1ac38d22b36b9e9"; // Replace with the fee token address
     const functionSelector = ethers.id("CCIP EVMExtraArgsV1").slice(0, 10);
     const textraArgs = ethers.AbiCoder.defaultAbiCoder().encode(
       ["uint256", "bool"],
@@ -112,7 +112,7 @@ const useSmartContractHook = () => {
     const extraArgs = encodedExtraArgs; //"0xA0Ab9EB68C3e5D080a073e7D49a61c2b840Dce80"; // Replace with any extra arguments
 
     const overrides = {
-      value: ethers.parseEther("0.01"), // Replace with the amount of Ether to send
+      //value: ethers.parseEther("0.01"), // Replace with the amount of Ether to send
       gasLimit: 1000000, // Replace with the gas limit,
       gasPrice: 1000000000, // Replace with the gas price
     };
