@@ -7,8 +7,8 @@ function Dropdown({ options, defaultDisplay }) {
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
-  const getCircleColor = (value) => {
-    switch (value) {
+  const getCircleColor = (option) => {
+    switch (option) {
       case 'sepolia':
         return 'blue';
       case 'mumbai':
