@@ -2,6 +2,8 @@ import { useState, useEffect, useMemo } from "react";
 import { ethers } from "ethers";
 
 import contractAbi from "../contracts/contractAbi.json";
+import erc20Abi from "../contracts/erc20.abi.json";
+
 import { CONSTANTS } from "../utils/constants";
 const useSmartContractHook = () => {
   const [isWalletConnected, setIsWalletConnected] = useState(false);
@@ -91,17 +93,18 @@ const useSmartContractHook = () => {
       tokenAmounts: 7000000,
     };
     // const ccipSendTrigger = await contract.ccipSend(`12532609583862916517`, params);
-
+    const tokenAddress = "0xD21341536c5cF5EB1bcb58f6723cE26e8D8E90e4";
+    const linkToken = "0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846";
     const destinationChainSelector = `16015286601757825753`; // Replace with the destination chain selector
     const receiver = walletAddress; // Replace with the receiver address
     const data = "0x"; // Replace with the data to send
     const tokenAmounts = [
       {
-        token: "0xbfa2acd33ed6eec0ed3cc06bf1ac38d22b36b9e9", // Replace with the token address
+        token: tokenAddress, // Replace with the token address
         amount: ethers.parseEther("0.0030"), // Replace with the token amount
       },
     ];
-    const feeToken = ethers.ZeroAddress; //"0xbfa2acd33ed6eec0ed3cc06bf1ac38d22b36b9e9"; // Replace with the fee token address
+    const feeToken = "0xFd57b4ddBf88a4e07fF4e34C487b99af2Fe82a05"; // Replace with the fee token address
     const functionSelector = ethers.id("CCIP EVMExtraArgsV1").slice(0, 10);
     const textraArgs = ethers.AbiCoder.defaultAbiCoder().encode(
       ["uint256", "bool"],
@@ -113,8 +116,8 @@ const useSmartContractHook = () => {
 
     const overrides = {
       //value: ethers.parseEther("0.01"), // Replace with the amount of Ether to send
-      gasLimit: 1000000, // Replace with the gas limit,
-      gasPrice: 1000000000, // Replace with the gas price
+      gasLimit: 25000000, // Replace with the gas limit,
+      gasPrice: 25000000000000, // Replace with the gas price
     };
 
     const message = {
@@ -127,11 +130,39 @@ const useSmartContractHook = () => {
       feeToken: feeToken ? feeToken : ethers.ZeroAddress,
       extraArgs: encodedExtraArgs,
     };
+    console.log("approveRequest");
+
+    // const tokenToSend =  await contract.approve(
+    //   tokenAddress
+    //   ethers.parseEther("0.01"),
+    //   overrides
+    // );
+    const tokenContract = new ethers.Contract(tokenAddress, erc20Abi, signer);
+
+    const approveRequest = await tokenContract.approve(
+      CONSTANTS.STORAGE_CONTRACT_ADDRESS,
+      ethers.parseEther("0.03")
+      // overrides
+    );
+    console.log("approveRequest", approveRequest);
+
+    const linkTokenContract = new ethers.Contract(linkToken, erc20Abi, signer);
+
+    const approveLinkRequest = await linkTokenContract.approve(
+      CONSTANTS.STORAGE_CONTRACT_ADDRESS,
+      ethers.parseEther("0.03")
+      // overrides
+    );
+    console.log("approveLinkRequest", approveLinkRequest);
+
     const tx = await contract.ccipSend(
       destinationChainSelector,
       message,
       // { receiver, data, tokenAmounts, feeToken, extraArgs },
-      overrides
+      {
+        ...overrides,
+        value: ethers.parseEther("0.04"),
+      }
     );
 
     console.log(tx);
