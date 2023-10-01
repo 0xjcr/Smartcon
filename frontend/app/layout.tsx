@@ -37,7 +37,7 @@ export default function RootLayout({
             minHeight: "105vh",
           }}
         >
-          <Navbar />
+          {/* <Navbar /> */}
           <div style={{ flexGrow: 1 }}>{children}</div>
           <Footer />
         </div>

@@ -22,7 +22,7 @@ export default function Home() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "30px",
+          // height: "100px",
           flexDirection: "column",
         }}
       >
@@ -31,45 +31,56 @@ export default function Home() {
           alt="SmartConSwap"
           style={{ width: "auto", height: "80px", margin: "50px" }}
         />
-        <button
-          onClick={() => {
-            // Your swap logic here
-          }}
-          style={{
-            backgroundColor: "white",
-            color: "black",
-            padding: "10px 20px",
-            borderRadius: "8px",
-            border: "1px solid gray",
-            cursor: "pointer",
-            fontWeight: "bold",
-            fontFamily: "sans-serif",
-            marginBottom: "150px",
-          }}
-        >
-          text here
-        </button>
+        <div>
+          {!isWalletConnected && (
+            <button
+              style={{
+                backgroundColor: "white",
+                color: "black",
+                padding: "10px 20px",
+                borderRadius: "8px",
+                border: "1px solid gray",
+                cursor: "pointer",
+                fontWeight: "bold",
+                fontFamily: "sans-serif",
+              }}
+              onClick={() => connectToWallet()}
+            >
+              Connect to wallet!
+            </button>
+          )}
+          {isWalletConnected && (
+            <button
+              style={{
+                backgroundColor: "white",
+                color: "black",
+                padding: "10px 20px",
+                borderRadius: "8px",
+                border: "1px solid gray",
+                cursor: "pointer",
+                fontWeight: "bold",
+                fontFamily: "sans-serif",
+              }}
+              onClick={() => makeTheTransfer()}
+            >
+              Test the connection!
+            </button>
+          )}
+        </div>
       </div>
 
-      <div>
-        <h1 className={styles.title}>
-          Wallet Status = {walletConnectionStatus}
-        </h1>
-        {!isWalletConnected && (
-          <button
-            onClick={() => connectToWallet()}
-            disabled={isWalletConnected || isWalletConnectedLoading}
-          >
-            Connect to wallet!
-          </button>
-        )}
-        {
-          <p>
-            Wallet is connected: {signer?.address} and using the {networkName}{" "}
-            provider
-          </p>
-        }
-        <button onClick={() => makeTheTransfer()}>Test the connection!</button>
+      <div style={{ textAlign: "center" }}>
+        <div>
+          <h1 className={styles.title}>
+            Wallet Status = {walletConnectionStatus}
+          </h1>
+          {
+            <p style={{ textAlign: "center" }}>
+              Wallet is connected: {signer?.address} and using the {networkName}{" "}
+              provider
+            </p>
+          }
+        </div>
       </div>
 
       <ComboBox></ComboBox>

@@ -137,23 +137,23 @@ const useSmartContractHook = () => {
     //   ethers.parseEther("0.01"),
     //   overrides
     // );
-    const tokenContract = new ethers.Contract(tokenAddress, erc20Abi, signer);
+    // const tokenContract = new ethers.Contract(tokenAddress, erc20Abi, signer);
 
-    const approveRequest = await tokenContract.approve(
-      CONSTANTS.STORAGE_CONTRACT_ADDRESS,
-      ethers.parseEther("0.03")
-      // overrides
-    );
-    console.log("approveRequest", approveRequest);
+    // const approveRequest = await tokenContract.approve(
+    //   CONSTANTS.STORAGE_CONTRACT_ADDRESS,
+    //   ethers.parseEther("0.03")
+    //   // overrides
+    // );
+    // console.log("approveRequest", approveRequest);
 
-    const linkTokenContract = new ethers.Contract(linkToken, erc20Abi, signer);
+    // const linkTokenContract = new ethers.Contract(linkToken, erc20Abi, signer);
 
-    const approveLinkRequest = await linkTokenContract.approve(
-      CONSTANTS.STORAGE_CONTRACT_ADDRESS,
-      ethers.parseEther("0.03")
-      // overrides
-    );
-    console.log("approveLinkRequest", approveLinkRequest);
+    // const approveLinkRequest = await linkTokenContract.approve(
+    //   CONSTANTS.STORAGE_CONTRACT_ADDRESS,
+    //   ethers.parseEther("0.03")
+    //   // overrides
+    // );
+    // console.log("approveLinkRequest", approveLinkRequest);
 
     const tx = await contract.ccipSend(
       destinationChainSelector,
@@ -161,7 +161,7 @@ const useSmartContractHook = () => {
       // { receiver, data, tokenAmounts, feeToken, extraArgs },
       {
         ...overrides,
-        value: ethers.parseEther("0.04"),
+        value: ethers.parseEther("0.03"),
       }
     );
 
